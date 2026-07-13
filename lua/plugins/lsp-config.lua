@@ -24,10 +24,10 @@ return {
 				severity_sort = true,
 			})
 
-
+			local capabilities = require("cmp_nvim_lsp").default_capabilities()
 			local servers = { "lua_ls" }
 			for _, server in ipairs(servers) do
-				vim.lsp.config(server, {})
+				vim.lsp.config(server, { capabilities = capabilities })
 				vim.lsp.enable(server)
 			end
 
